@@ -1,0 +1,33 @@
+<!doctype html>
+<script src="code/game.js"></script>
+<script src="code/game_levels.js"></script>
+<script src="code/Canvas_Animation.js"></script>
+<script src="code/LoadScreen.js"></script>
+
+<link rel="stylesheet" href="css/game.css">
+
+<body>
+	<canvas id = 'canvas' width = 500 height = 500 style="z-index: 1" ></canvas>
+	<canvas id = 'myCanvas' width = 500 height = 500 style='position: absolute; z-index: 4; top: 0%;'></canvas>
+	<button id="startButton" type="submit" onclick='runTheGame()'>Click Me to Start the Amazing Game of Fun!</button>
+  <script>
+    
+	function runTheGame()
+	{
+		var canvasRef = document.getElementById('canvas');
+		var buttonRef = document.getElementById('startButton');
+		var myCanvasRef = document.getElementById('myCanvas');
+		buttonRef.style.visibility = 'hidden';
+		canvasRef.remove();
+		myCanvasRef.style.visibility = 'visible';
+		init();
+		setTimeout(function() {
+			myCanvasRef.remove();
+			runGame(GAME_LEVELS, DOMDisplay);
+		},5000);
+		
+		
+	}
+	
+  </script>
+</body>
