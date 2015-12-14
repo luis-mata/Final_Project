@@ -132,7 +132,7 @@ function Enemy2(pos, ch) {
   this.pos = pos;
   this.size = new Vector(1, 1);
   if (ch == "p") {
-    this.speed = new Vector(25, 0);
+    this.speed = new Vector(0, 20);
   } /*else if (ch == "p") {
     this.speed = new Vector(0, 20);
   } else if (ch == "w") {
