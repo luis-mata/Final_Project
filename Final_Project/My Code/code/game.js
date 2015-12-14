@@ -4,7 +4,9 @@ var actorChars = {
   "o": Coin, // A coin will wobble up and down
   "=": Lava, "|": Lava, "v": Lava,
   "d": Death,
-  "e": Enemy, "p": Enemy, "w": Enemy, //different types of enemies
+  "e": Enemy, 
+  "p": Enemy2, 
+  "w": Enemy3, //different types of enemies
   //"y": Move, "u": Move, "z": Move //moving platforms 
 };
 
@@ -116,14 +118,48 @@ function Enemy(pos, ch) {
   this.size = new Vector(1, 1);
   if (ch == "e") {
     this.speed = new Vector(25, 0);
-  } else if (ch == "p") {
+  } /*else if (ch == "p") {
     this.speed = new Vector(0, 20);
   } else if (ch == "w") {
     this.speed = new Vector(0, 3);
     this.repeatPos = pos;
-  }
+  }*/
 }
+
 Enemy.prototype.type = "enemy";
+
+function Enemy2(pos, ch) {
+  this.pos = pos;
+  this.size = new Vector(1, 1);
+  if (ch == "p") {
+    this.speed = new Vector(25, 0);
+  } /*else if (ch == "p") {
+    this.speed = new Vector(0, 20);
+  } else if (ch == "w") {
+    this.speed = new Vector(0, 3);
+    this.repeatPos = pos;
+  }*/
+}
+
+Enemy2.prototype.type = "enemy2";
+
+function Enemy3(pos, ch) {
+  this.pos = pos;
+  this.size = new Vector(1, 1);
+  if (ch == "w") {
+    this.speed = new Vector(0, 3);
+	this.repeatPos = pos;
+  } /*else if (ch == "p") {
+    this.speed = new Vector(0, 20);
+  } else if (ch == "w") {
+    this.speed = new Vector(0, 3);
+    this.repeatPos = pos;
+  }*/
+}
+
+Enemy3.prototype.type = "enemy3";
+
+
 
 
 /*function Move(pos, ch) {
@@ -335,6 +371,28 @@ Enemy.prototype.act = function(step, level) {
     this.speed = this.speed.times(-1);
 };
 
+Enemy2.prototype.act = function(step, level) {
+  var newPos = this.pos.plus(this.speed.times(step));
+  if (!level.obstacleAt(newPos, this.size))
+    this.pos = newPos;
+  else if (this.repeatPos)
+    this.pos = this.repeatPos;
+  else
+    this.speed = this.speed.times(-1);
+};
+
+Enemy3.prototype.act = function(step, level) {
+  var newPos = this.pos.plus(this.speed.times(step));
+  if (!level.obstacleAt(newPos, this.size))
+    this.pos = newPos;
+  else if (this.repeatPos)
+    this.pos = this.repeatPos;
+  else
+    this.speed = this.speed.times(-1);
+};
+
+
+
 /*Move.prototype.act = function(step, level) {
   var newPos = this.pos.plus(this.speed.times(step));
   if (!level.obstacleAt(newPos, this.size))
@@ -428,7 +486,7 @@ Level.prototype.playerTouched = function(type, actor) {
 
   // if the player touches lava and the player hasn't won
   // Player loses
-  if (type == "lava" && this.status == null || type == "death" && this.status == null || type == "enemy" && this.status == null) {
+  if (type == "lava" && this.status == null || type == "death" && this.status == null || type == "enemy" && this.status == null || type == "enemy2" && this.status == null || type == "enemy3" && this.status == null) {
     this.status = "lost";
     this.finishDelay = 1;
   } else if (type == "coin" || type == "death") {
