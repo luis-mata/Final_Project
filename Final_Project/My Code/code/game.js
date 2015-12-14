@@ -147,8 +147,8 @@ function Enemy3(pos, ch) {
   this.pos = pos;
   this.size = new Vector(1, 1);
   if (ch == "w") {
-    this.speed = new Vector(0, 3);
-	this.repeatPos = pos;
+    this.speed = new Vector(10, 0);
+	//this.repeatPos = pos;
   } /*else if (ch == "p") {
     this.speed = new Vector(0, 20);
   } else if (ch == "w") {
