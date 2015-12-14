@@ -145,6 +145,7 @@
 		
 		context.save();
 		context.font = '30px Arial';
+		context.fillStyle = 'white';
 		context.translate(canvas.width/2, canvas.height/2);
 		if(movingUp == false)
 		{
@@ -157,13 +158,14 @@
 			if(start == 40) movingUp = false;
 		}
 		
-		context.fillText('Click around to destroy them!', 0, 0);
+		context.fillText('Or Click the Button to Begin', 0, 0);
 		context.textAlign = 'center';
 		context.textBaseLine = 'middle';
 		context.restore();
 		
 		context.save();
 		context.font = '30px Arial';
+		context.fillStyle = 'white';
 		context.translate(canvas.width/4, canvas.height/2);
 		if(movingUp2 == false)
 		{
@@ -176,11 +178,29 @@
 			if(start2 == 40) movingUp2 = false;
 		}
 		
-		context.fillText('Move the mouse to get crazy!', 0, 0);
+		context.fillText('Move to Create, Click to Destroy', 0, 0);
 		context.textAlign = 'center';
 		context.textBaseLine = 'middle';
 		context.restore();
 		
+		/*context.save();
+		context.font = '30px Arial';
+		context.translate(canvas.width/8, canvas.height/2);
+		if(movingUp2 == false)
+		{
+			context.rotate(0.010*start2++);
+			if(start2 == -40) movingUp2 = true;
+		}
+		else if(movingUp2 == true)
+		{
+			context.rotate(0.010*start2--);
+			if(start2 == 40) movingUp2 = false;
+		}
+		
+		context.fillText('Or Click Start To Begin!!', 0, 0);
+		context.textAlign = 'center';
+		context.textBaseLine = 'middle';
+		context.restore();*/
 	
 	
 	
@@ -232,7 +252,7 @@
 		if(shape.num == 2)
 		{
 			context.beginPath();
-			context.globalCompositeOperation = shape.type;
+			//context.globalCompositeOperation = shape.type;
 			context.rect(shape.x, shape.y, shape.width, shape.height);
 			context.fillStyle = shape.color;
 			context.fill();
@@ -247,7 +267,7 @@
 		if(shape.num == 3)
 		{
 			context.beginPath();
-			context.globalCompositeOperation = shape.type;
+			//context.globalCompositeOperation = shape.type;
 			context.arc(shape.x, shape.y, shape.r, 0, degreesToRadians(270), true);
 			context.fillStyle = shape.color;
 			context.fill();
@@ -262,7 +282,7 @@
 		if(shape.num == 4)
 		{
 			context.beginPath();
-			context.globalCompositeOperation = shape.type;
+			//context.globalCompositeOperation = shape.type;
 			context.rect(shape.x, shape.y, shape.width, shape.height);
 			context.fillStyle = shape.color;
 			context.fill();
@@ -280,7 +300,7 @@
 			//context.globalCompositeOperation = shape.type;
 			context.arc(shape.x, shape.y+68, 34.5, 5.75, 3.66, false);
 			context.quadraticCurveTo(shape.x-3.5, shape.y+15, shape.x, shape.y);
-			context.fillStyle = "grey"
+			//context.fillStyle = "grey"
 			context.fill();
 			if (shape.x + shape.dx > canvas.width || shape.x + shape.dx < 0)
 				shape.dx = -shape.dx;
