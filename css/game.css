@@ -2,10 +2,14 @@
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava{ background-image: url("http://vignette3.wikia.nocookie.net/tibia/images/a/aa/Lava.gif/revision/latest?cb=20141116212949&path-prefix=en"); 
+.lava{ background-image: url(lava.png);
+		background-repeat: no-repeat;
+		background-size: 20px 20px;
 				
 }
-.wall{ background-image: url("http://www.artist-reference.com/wp-content/uploads/2011/03/TRU_TEXTURES_SEAMLESS-MOSSY_STONE_sample.png");  
+.wall{ background-image: url(wall.jpg);  
+		background-repeat: no-repeat;
+		background-size: 20px 20px;
 }
 
 .actor  { position: absolute;  }
