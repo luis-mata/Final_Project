@@ -1,0 +1,47 @@
+.background    { background: rgb(135,206,235);
+                 table-layout: fixed;
+                 border-spacing: 0;   }
+.background td { padding: 0;          }
+.lava{ background-image: url("http://vignette3.wikia.nocookie.net/tibia/images/a/aa/Lava.gif/revision/latest?cb=20141116212949&path-prefix=en"); 
+				
+}
+.wall{ background-image: url("http://www.artist-reference.com/wp-content/uploads/2011/03/TRU_TEXTURES_SEAMLESS-MOSSY_STONE_sample.png");  
+}
+
+.actor  { position: absolute;  }
+.death { background-image: url("http://img05.deviantart.net/1464/i/2011/312/f/6/neon_green_powder_texture_i_by_melyssah6_stock-d4fiemj.jpg") }
+.coin   { background-image: url("http://orig03.deviantart.net/dab6/f/2007/241/a/2/golden_texture_by_japanstocks.jpg"); }
+.player { background: white; }
+.enemy {background: url(http://cdn.bulbagarden.net/upload/9/9d/Dream_Iron_Ball_Sprite.png); 
+	   padding: 1px;
+	   background-repeat: no-repeat;
+	   box-shadow: inset  0px  1px 1px black, inset 0px  1px 1px black, 0px  1px 1px black, 0px  1px 1px black,;
+	   border-radius: 9px; }
+
+
+.game {
+  overflow: hidden;
+  max-width: 600px;
+  max-height: 450px;
+  position: relative;
+}
+.lost .player {
+  background: rgb(160, 64, 64);
+}
+.won .player {
+		background-image:("http://yesiamcheap.com/wordpress/wp-content/uploads/2012/12/youwon1.gif");
+		background-position: center;
+}
+#startButton {
+	font-family:'Arial';
+	font-size: 20px;
+	z-index: 2;
+	position: absolute;
+	width: 20%;
+	background: white;
+	box-shadow: inset 0 25px 55px -25px rgba(200,0,0,0.7);
+	background-image: url(fire.gif);
+	background-position: -3px -25px;
+	top:70%;
+	right: 45%;
+}
